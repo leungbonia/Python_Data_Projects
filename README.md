@@ -20,7 +20,7 @@ plt.show()
 ```
 
 ### Results
-![Visualisation of Top Skills for Data roles](3_Project\images\skill_demand_roles.png)
+![Visualisation of Top Skills for Data roles](3_Project/images/skill_demand_roles.png)
 
 ### Insights
 - Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineering (65%).
