@@ -69,3 +69,42 @@ plt.show()
 - SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand. 
 - Excel experienced a significant increase in demand starting around September, surpassing both Python and Tableau by the end of the year. 
 - Both Python and Tableau show realatively stable demand throughout the year with some fluctuations but remain essential skills for data analysts. Power BI while less demanded compared to the others, shows a slight upward trend towards the year's end. 
+
+## 3. How well do jobs and skills pay for Data Analyst?
+
+### Salary Analysis for Data roles
+
+#### Visualise data
+```python
+sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order = job_order)
+ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+plt.show()
+```
+#### Results
+![Salary Distributions of Data Jobs in the US](3_Project\images\salary_analysis.png)
+*Box plot showing the salary distribution for the top 6 data job titles.*
+
+#### Insights
+- There's a significant variation in salary range across different job titles. 
+
+### Hightest Paid and Most Demanded Skills for Data Analysts
+
+```python
+fig, ax = plt.subplts(2, 1)
+
+#Top 10 Highest paid Skills for Data Analysts
+sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
+
+#Top 10 Most In-Demand Skills for Data Analysts
+sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
+
+plt.show()
+```
+
+#### Results
+![The Highest Paid & Most In-Demand Skills for Data Analysts in the US](3_Project\images\highest_paid_most_demand_skills.png)
+*The highest paid skills and most in-demand skills for data analysts in the US*
+
+#### Insights
+- Highest paying skills may not be in demand. 
