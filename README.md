@@ -27,3 +27,45 @@ plt.show()
 - SQL is the most requested skill for Data Analyst and Data Scientists, with it in over half the job postings for both roles. For Data Engineers, Python is the most sought-after skill, appearing in 68% of job postings. 
 - Data Engineers require more specialised technila skills (AWS, Azure, Spark) compared to Data Analyst and Data Scientists who are expected to be proficient in more generatl data management and analysis tools (Excel, Tableau). 
 
+## 2. How are in-demand skills trending for Dat Anlaysts?
+
+### Visualise Data
+
+```python
+
+from matplotlib.ticker import PercentFormatter
+df_plot = df_DA_US_percent.iloc[:, :5]
+
+#plot
+sns.lineplot(data = df_plot, dashes = False, palette='tab10')
+sns.set_theme(style = 'ticks')
+sns.despine()
+
+plt.title('Trending Top Skills for Data Analyst in the US')
+plt.ylabel('Likelihood in Job Posting')
+plt.xlabel('2023')
+plt.legend().remove()
+
+from matplotlib.ticker import PercentFormatter
+plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
+ #get current axis
+
+for i in range(5):
+    if i == 3 :
+        plt.annotate(df_plot.columns[i], (11.2, df_plot.iloc[-1, i]-3))
+    else:
+        plt.annotate(df_plot.columns[i], (11.2, df_plot.iloc[-1, i]))
+
+plt.tight_layout()
+plt.show()
+```
+### Results
+
+![Trending Top Skills for Data Analysts in the US in 2023](3_Project\images\trending_skills.png)
+*Bar graph visualising the trending top skills for data analysts int he UK in 2023.*
+
+### Insights
+
+- SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand. 
+- Excel experienced a significant increase in demand starting around September, surpassing both Python and Tableau by the end of the year. 
+- Both Python and Tableau show realatively stable demand throughout the year with some fluctuations but remain essential skills for data analysts. Power BI while less demanded compared to the others, shows a slight upward trend towards the year's end. 
