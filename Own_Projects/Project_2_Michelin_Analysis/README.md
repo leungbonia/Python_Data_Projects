@@ -53,6 +53,9 @@ df.loc[null_country, 'City'].unique().tolist()
 #Fill null Country with City 
 df['Country'] = df['Country'].fillna(df['City'])
 ```
+### Unify all prices using price level
+```df['Price_level'] = df['Price'].str.len().astype(int)```
+
 ### Use the primary cuisine as the sole cuisine in ```Cuisine```
 ```
 df['Cuisine'] = df['Cuisine'].str.split(',')
@@ -105,7 +108,8 @@ sns.barplot(data= award, x = 'Award', y = 'Count', hue = 'Award', palette = 'roc
 ```
 
 ### Results
-![Number of Michelin Award for each Award level in 2025](Own_Projects\Project_2_Michelin_Analysis\images\bar_restaurants by award.png)
+The bar chart shows the numebr of Michelin Restaurants in each award level in 2025. It's no surprise that Selected Restaurant which is the lowest award level has the most number of restaurant whereas 3 Stars which is the highest award level (and most difficult to attain) has the least number of restaurants. 
+![Number of Michelin Award for each Award level in 2025](images\bar_restaurants_by_award.png)
 *Bar Chart on the Number of Michelin Award for each Award Level in 2025*
 
 ```
@@ -117,9 +121,17 @@ fig, ax = plt.subplots(figsize=(8, 8))
 ax.pie(award_counts, labels=awards, colors=colours, startangle=144,autopct='%1.1f%%', labeldistance=1.2, pctdistance=1.1)
 ```
 
-![Proportion of Michelin Award for each Award level in 2025](Own_Projects\Project_2_Michelin_Analysis\images\pie_restaurants by award.png)
+The pie chart shows the proportion of Michelin Restaurants in each award level in 2025. Similar to the bar chart above, the number of restaurant in each award level decreases as the award level gets higher. Interestingly, the proportion of restaurants awarded Bib gourmand and 1 star is relatively similar. It's worth investigating the difference in assessment criteria for these two award levels. 
+![Proportion of Michelin Award for each Award level in 2025](images/pie_restaurants_by_award.png)
 *Pie Chart on the Number of Michelin Award for each Award Level in 2025*
 
+A further analysis finds out that most Bib Gourmand restaurants are cheaper than 1 Star restaurants. 
+![Michelin Award for each Price level](images\stacked_bar_by_award_price.png)
+*Stack Bar Chart on the price level distribution of restaurants in each award level*
+
 ### Insights:
+- Selected Restaurants are the easiest award level to attain, with 60.7% of restaurants within the Michelin Guide being awarded this award level. 
+- The number of restaurants awarded Bib Gourmand and 1 Star are very similar yet their price levels are very different. It's worth investigating what are the assessment criteria between the two award levels. More importantly, It's probably worth going to Bib Gourmand restaurants over 1 Star restaurants because of the generally lower price range yet similar thresholds on assessment. 
+
 
 
