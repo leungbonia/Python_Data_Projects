@@ -96,14 +96,18 @@ df_cuisine_grouped['Summarised Cuisine'] = df_cuisine_grouped['Cuisine'].apply(c
 ## 1. What is the proportion of awards for each award level in the Michelin Guide? 
 
 To find the proportion of award for each award level in the Michelin Guide, I categorised the number of award in each award level and plot both a bar chart and a pie chart. 
+
 ```
 # Bar Chart
 award = df.groupby('Award').size().sort_values(ascending=False).reset_index(name = 'Count')
 
 sns.barplot(data= award, x = 'Award', y = 'Count', hue = 'Award', palette = 'rocket')
 ```
+
+### Results
 ![Number of Michelin Award for each Award level in 2025](Own_Projects\Project_2_Michelin_Analysis\images\bar_restaurants by award.png)
 *Bar Chart on the Number of Michelin Award for each Award Level in 2025*
+
 ```
 #Pie Chart
 award_prop = df.groupby('Award').size().reset_index(name = 'award_count')
@@ -112,6 +116,10 @@ colours = sns.set_palette('rocket_r', n_colors=len(awards))
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.pie(award_counts, labels=awards, colors=colours, startangle=144,autopct='%1.1f%%', labeldistance=1.2, pctdistance=1.1)
 ```
+
 ![Proportion of Michelin Award for each Award level in 2025](Own_Projects\Project_2_Michelin_Analysis\images\pie_restaurants by award.png)
 *Pie Chart on the Number of Michelin Award for each Award Level in 2025*
+
+### Insights:
+
 
