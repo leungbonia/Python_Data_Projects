@@ -109,7 +109,9 @@ sns.barplot(data= award, x = 'Award', y = 'Count', hue = 'Award', palette = 'roc
 
 ### Results
 The bar chart shows the numebr of Michelin Restaurants in each award level in 2025. It's no surprise that Selected Restaurant which is the lowest award level has the most number of restaurant whereas 3 Stars which is the highest award level (and most difficult to attain) has the least number of restaurants. 
+
 ![Number of Michelin Award for each Award level in 2025](images/bar_restaurants_by_award.png)
+
 *1.1 Bar Chart on the Number of Michelin Award for each Award Level in 2025*
 
 ```
@@ -122,11 +124,15 @@ ax.pie(award_counts, labels=awards, colors=colours, startangle=144,autopct='%1.1
 ```
 
 The pie chart shows the proportion of Michelin Restaurants in each award level in 2025. Similar to the bar chart above, the number of restaurant in each award level decreases as the award level gets higher. Interestingly, the proportion of restaurants awarded Bib gourmand and 1 star is relatively similar. It's worth investigating the difference in assessment criteria for these two award levels. 
+
 ![Proportion of Michelin Award for each Award level in 2025](images/pie_restaurants_by_award.png)
+
 *1.2 Pie Chart on the Number of Michelin Award for each Award Level in 2025*
 
 A further analysis finds out that most Bib Gourmand restaurants are cheaper than 1 Star restaurants. 
+
 ![Michelin Award for each Price level](images/stacked_bar_by_award_price.png)
+
 *1.3 Stack Bar Chart on the price level distribution of restaurants in each award level*
 
 ### Insights:
@@ -139,11 +145,15 @@ To find out which county has the most number of Michelin restaurants, I split ``
 
 ### Results
 The results below show the Country with the most number of Michelin restaurants in the world. 
+
 ![Top 10 countries with most number of Michelin Restaurants in the world](images/bar_restaurants_by_country.png)
+
 *2.1 Bar Chart showing the top 10 countries with the most number of Michelin Restaurants in the world in 2025.*
 
 More importantly, I want to find out the country with the most number of Michelin Starred Restaurants in the world. It's clear that France has the most number of Micheline Starred Restaurants in the world. However comparing the two graphs, USA has the third most Michelin restaurants in the world whereas Japan is placed sixth on the group above. On the contrary, when only accounting Starred restaurants (graph below), Japan has the third most number of starred restaurants in the world whereas the USA is placed sixth on the graph.
+
 ![Top 10 countries with most number of Michelin Starred Restaurants in the world](images/stacked_bar_starred_restaurant_by_country.png)
+
 *2.2 Stacked Bar Chart showing the top 10 countries with the most number of Michelin Starred Restaurants in the world in 2025.*
 
 ### Insights
@@ -156,11 +166,15 @@ Using the ```City``` column explored in the last question, I found which city in
 
 ### Results
 The graph below shows the city with the most number of Michelin restaurants in the world. 
+
 ![Top 10 cities with most number of Michelin Restaurants in the world](images/bar_restaurants_by_city.png)
+
 *3.1 Bar Chart showing the top 10 cities with the most number of Michelin Restaurants in the world in 2025.*
 
 Similarly, I created a graph showing the top 10 cities with the most number of Starred restauants in the world. 
+
 ![Top 10 cities with most number of Michelin Starred Restaurants in the world](images/stacked_bar_starred_restaurant_by_city.png)
+
 *3.2 Stacked Bar Chart showing the top 10 countries with the most number of Michelin Starred Restaurants in the world in 2025.*
 
 ### Insights
@@ -174,10 +188,14 @@ Having gone through the geography distribution of Michelin restaurants, I wonder
 
 ### Results
 The graph below shows the top 10 cuisines with the most Michelin Awards. 
+
 ![Top 10 cuisines with the most Michelin awards](images/bar_restaurants_by_summarised_cuisines.png)
+
 *4.1 Bar Chart showing the top 10 cuisines with the most number of Michelin restaurants*
 
 The graph below shows the top 10 cuisines with the most Michelin Starred restaurants.
+
 ![Top 10 cuisines with the most Michelin Stars](images/stacked_bar_by_summarised_cuisine.png)
+
 *4.2 Bar Chart showing the top 10 cuisines with the most number of Michelin stared restaurants*
 
